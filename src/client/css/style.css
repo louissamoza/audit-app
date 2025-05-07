@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    background-color: rgb(0, 61, 91);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    background-color: whitesmoke;
+}
+
+footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: rgb(0, 61, 91);
+    color: white;
+    font-weight: bold;
+}
+
+.nav-pills {
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.nav-pills .nav-link {
+    color: white;
+}
+
+.nav-pills .nav-link.active {
+    gap: 0.5rem;
+    background-color: rgb(37, 226, 204);
+    color: rgb(0, 61, 91);
+}
+
+.nav-pills .nav-link:hover {
+    color: rgb(0, 61, 91);
+    background-color: whitesmoke;
+}
