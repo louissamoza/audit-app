@@ -26,15 +26,25 @@ generateButton.addEventListener('click', () => {
 
     const questionTitles = Array.from(questions).map(question => question.textContent);
 
+    console.log(questionTitles);
+
     XLSX.utils.sheet_add_aoa(worksheet, [["Name", "Location", "Date", ...questionTitles, "Notes"]], { origin: "A1" });
 
-    const nameWidth = data.reduce((w, r) => Math.max(w, r.name.length), 10);
+    console.log(data);
+
+
+    const nameWidth = data.reduce((w, r) => Math.max(w, r.auditor_name.length), 10);
     const locationWidth = data.reduce((w, r) => Math.max(w, r.location.length), 10);
+    const questionsWidth = questionTitles.map(title => ({ wch: title.length }));
+    const notesWidth = data.reduce((w, r) => Math.max(w, r.notes.length), 10);
+
     
     worksheet["!cols"] = [
         { wch: nameWidth },
         { wch: locationWidth },
-        { wch: 10 }
+        { wch: 10 },
+        ...questionsWidth,
+        { wch: notesWidth },
     ];
 
     XLSX.writeFile(workbook, 'audit_data.xlsx');

@@ -22,7 +22,7 @@
             <div class="audit-form-header">
                 <div>
                     <label for="auditor-name">Name:</label>
-                    <input type="text" id="auditor-name" name="auditor-name" placeholder="Name" required>
+                    <input type="text" id="auditor-name" name="auditor_name" placeholder="Name" required>
                 </div>
                 <div>
                     <label for="location">Location:</label>
@@ -43,48 +43,48 @@
             </div>
             <div class="audit-form-question">
                 <p>Are fire extinguishers inspected?</p>
-                <label><input type="radio" name="question-1" value="Poor">Poor</label>
-                <label><input type="radio" name="question-1" value="Fair">Fair</label>
-                <label><input type="radio" name="question-1" value="Good">Good</label>
-                <label><input type="radio" name="question-1" value="Very Good">Very Good</label>
-                <label><input type="radio" name="question-1" value="Excellent">Excellent</label>
-                <label><input type="radio" name="question-1" value="N/A">N/A</label>
+                <label><input type="radio" name="question_1" value="Poor">Poor</label>
+                <label><input type="radio" name="question_1" value="Fair">Fair</label>
+                <label><input type="radio" name="question_1" value="Good">Good</label>
+                <label><input type="radio" name="question_1" value="Very Good">Very Good</label>
+                <label><input type="radio" name="question_1" value="Excellent">Excellent</label>
+                <label><input type="radio" name="question_1" value="N/A">N/A</label>
             </div>
             <div class="audit-form-question">
                 <p>Is the area clean?</p>
-                <label><input type="radio" name="question-2" value="Poor">Poor</label>
-                <label><input type="radio" name="question-2" value="Fair">Fair</label>
-                <label><input type="radio" name="question-2" value="Good">Good</label>
-                <label><input type="radio" name="question-2" value="Very Good">Very Good</label>
-                <label><input type="radio" name="question-2" value="Excellent">Excellent</label>
-                <label><input type="radio" name="question-2" value="N/A">N/A</label>
+                <label><input type="radio" name="question_2" value="Poor">Poor</label>
+                <label><input type="radio" name="question_2" value="Fair">Fair</label>
+                <label><input type="radio" name="question_2" value="Good">Good</label>
+                <label><input type="radio" name="question_2" value="Very Good">Very Good</label>
+                <label><input type="radio" name="question_2" value="Excellent">Excellent</label>
+                <label><input type="radio" name="question_2" value="N/A">N/A</label>
             </div>
             <div class="audit-form-question">
                 <p>Are emergency exits clearly marked and unobstructed?</p>
-                <label><input type="radio" name="question-3" value="Poor">Poor</label>
-                <label><input type="radio" name="question-3" value="Fair">Fair</label>
-                <label><input type="radio" name="question-3" value="Good">Good</label>
-                <label><input type="radio" name="question-3" value="Very Good">Very Good</label>
-                <label><input type="radio" name="question-3" value="Excellent">Excellent</label>
-                <label><input type="radio" name="question-3" value="N/A" class="not-applicable">N/A</label>
+                <label><input type="radio" name="question_3" value="Poor">Poor</label>
+                <label><input type="radio" name="question_3" value="Fair">Fair</label>
+                <label><input type="radio" name="question_3" value="Good">Good</label>
+                <label><input type="radio" name="question_3" value="Very Good">Very Good</label>
+                <label><input type="radio" name="question_3" value="Excellent">Excellent</label>
+                <label><input type="radio" name="question_3" value="N/A" class="not-applicable">N/A</label>
             </div>
             <div class="audit-form-question">
                 <p>Are surveillance cameras operational and covering key areas?</p>
-                <label><input type="radio" name="question-4" value="Poor">Poor</label>
-                <label><input type="radio" name="question-4" value="Fair">Fair</label>
-                <label><input type="radio" name="question-4" value="Good">Good</label>
-                <label><input type="radio" name="question-4" value="Very Good">Very Good</label>
-                <label><input type="radio" name="question-4" value="Excellent">Excellent</label>
-                <label><input type="radio" name="question-4" value="N/A">N/A</label>
+                <label><input type="radio" name="question_4" value="Poor">Poor</label>
+                <label><input type="radio" name="question_4" value="Fair">Fair</label>
+                <label><input type="radio" name="question_4" value="Good">Good</label>
+                <label><input type="radio" name="question_4" value="Very Good">Very Good</label>
+                <label><input type="radio" name="question_4" value="Excellent">Excellent</label>
+                <label><input type="radio" name="question_4" value="N/A">N/A</label>
             </div>
             <div class="audit-form-question">
                 <p>Are licenses and permits current and displayed as required?</p>
-                <label><input type="radio" name="question-5" value="Poor">Poor</label>
-                <label><input type="radio" name="question-5" value="Fair">Fair</label>
-                <label><input type="radio" name="question-5" value="Good">Good</label>
-                <label><input type="radio" name="question-5" value="Very Good">Very Good</label>
-                <label><input type="radio" name="question-5" value="Excellent">Excellent</label>
-                <label><input type="radio" name="question-5" value="N/A">N/A</label>
+                <label><input type="radio" name="question_5" value="Poor">Poor</label>
+                <label><input type="radio" name="question_5" value="Fair">Fair</label>
+                <label><input type="radio" name="question_5" value="Good">Good</label>
+                <label><input type="radio" name="question_5" value="Very Good">Very Good</label>
+                <label><input type="radio" name="question_5" value="Excellent">Excellent</label>
+                <label><input type="radio" name="question_5" value="N/A">N/A</label>
             </div>
             <div class="audit-form-notes">
                 <label for="notes" style="display: block;">Notes:</label>
@@ -93,12 +93,11 @@
             <div class="buttons">
                 <button type="submit" class="btn">Submit Audit</button>
                 <button type="reset" class="btn">Reset</button>
-                <button type="button" class="btn" id="generate-button">Generate Audit</button>
+                <button type="button" class="btn" id="generate-button">Generate Report</button>
             </div>
         </form>
     </main>
     <footer class="audit-footer">
-        
     </footer>
 </body>
 <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
