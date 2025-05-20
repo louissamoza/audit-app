@@ -12,7 +12,7 @@
 <body>
     <header class="audit-header">
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="../home/home.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="audit.html" class="nav-link active" aria-current="page">Audit</a></li>
         </ul>
     </header>
@@ -21,24 +21,25 @@
         <form id="audit-form">
             <div class="audit-form-header">
                 <div>
-                    <label for="auditor-name">Name:</label>
-                    <input type="text" id="auditor-name" name="auditor_name" placeholder="Name" required>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
                 </div>
                 <div>
-                    <label for="location">Location:</label>
-                    <select id="location" name="location" required>
-                        <option value="" disabled selected>Select</option>
+                    <label for="location-select">Location:</label>
+                    <select id="location-select" name="location" required>
+                        <option value="" selected disabled>Select</option>
                         <option value="Markham">Markham</option>
                         <option value="Toronto">Toronto</option>
                         <option value="Ajax">Ajax</option>
                         <option value="Brampton">Brampton</option>
                         <option value="Oshawa">Oshawa</option>
                     </select>
-                    <button type="button" class="btn" id="add-location-button"><i class="fa-solid fa-plus"></i></button>
+                    <button type="button" class="btn" id="add-location-btn"><i class="fa-solid fa-plus"></i></button>
+                    <button type="button" class="btn" id="delete-location-btn"><i class="fa-solid fa-minus"></i></button>
                 </div>
                 <div>
-                    <label for="audit-form-date">Date:</label>
-                    <input type="date" id="audit-form-date" name="date" placeholder="Audit Date">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" placeholder="Audit Date">
                 </div>
             </div>
             <div class="audit-form-question">
@@ -93,13 +94,59 @@
             <div class="buttons">
                 <button type="submit" class="btn">Submit Audit</button>
                 <button type="reset" class="btn">Reset</button>
-                <button type="button" class="btn" id="generate-button">Generate Report</button>
+                <button type="button" class="btn" id="generate-report-btn">Generate Report</button>
             </div>
         </form>
     </main>
     <footer class="audit-footer">
     </footer>
 </body>
+<div class="modal fade" id="add-location-modal" tabindex="-1" aria-labelledby="add-location-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-location-title">Add Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="add-location-form">
+                    <input type="text" id="add-location-text" name="add_location" placeholder="New Location">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="add-location-btn-confirm" class="btn">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="delete-location-modal" tabindex="-1" aria-labelledby="delete-location-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete-location-title">Delete Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="delete-location-form">
+                    <select id="delete-location-select" name="delete_location">
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="delete-location-btn-confirm" class="btn">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
 <script type="module" src="audit.js"></script>
 </html>

@@ -53,7 +53,6 @@ p {
 
 .audit-form-header {
     margin-bottom: 2rem;
-    width: 100%;
     flex-direction: row;
     display: flex;
     justify-content: center;
@@ -65,17 +64,17 @@ p {
         gap: 0.5rem;
         button {
             display: flex;
-            height: 28px;
-            width: 29px;
+            height: 26px;
+            width: 26px;
             align-items: center;
             justify-content: center;
         }
         select {
-            height: 28px;
+            height: 26px;
             width: 120px;
         }
         input {
-            height: 28px;
+            height: 26px;
             width: 120px;
         }
     }
@@ -87,4 +86,45 @@ p {
     max-width: 378px;
     width: 100%;
     margin-bottom: 2rem;
+}
+
+.modal-footer {
+    button {
+        background-color: rgb(37, 226, 204);
+        color: rgb(0, 61, 91);
+        font-weight: bold;
+        margin-top: 1rem;
+        border: none;
+    }
+    button:hover {
+        background-color: rgb(0, 61, 91);
+        color: whitesmoke;
+    }
+}
+
+.modal-content {
+    background-color: whitesmoke;
+    max-width: 300px;
+    .modal-header {
+        background-color: rgb(0, 61, 91);
+        color: white;
+        button {
+            color: white;
+        }
+    }
+    .modal-body {
+        input {
+            width: 100%;
+        }
+        select {
+            height: 26px;
+            width: 100%;
+        }
+    }
+}
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
