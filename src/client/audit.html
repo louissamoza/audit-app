@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audit Dashboard</title>
     <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="../../../css/style.css" rel="stylesheet">
-    <link href="audit.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/audit.css" rel="stylesheet">
 </head>
+
 <body>
     <header class="audit-header">
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="../home/home.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="audit.html" class="nav-link active" aria-current="page">Audit</a></li>
         </ul>
     </header>
     <main class="audit-content">
         <h1>Audit Dashboard</h1>
         <form id="audit-form">
-            <div class="audit-form-header">
-                <div>
+            <div id="audit-form-header">
+                <div id="audit-form-header-labels">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Name" required>
-                </div>
-                <div>
                     <label for="location-select">Location:</label>
-                    <select id="location-select" name="location" required>
-                        <option value="" selected disabled>Select</option>
-                        <option value="Markham">Markham</option>
-                        <option value="Toronto">Toronto</option>
-                        <option value="Ajax">Ajax</option>
-                        <option value="Brampton">Brampton</option>
-                        <option value="Oshawa">Oshawa</option>
-                    </select>
-                    <button type="button" class="btn" id="add-location-btn"><i class="fa-solid fa-plus"></i></button>
-                    <button type="button" class="btn" id="delete-location-btn"><i class="fa-solid fa-minus"></i></button>
-                </div>
-                <div>
                     <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" placeholder="Audit Date">
+                </div>
+                <div id="audit-form-header-controls">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div>
+                        <select id="location-select" name="location" required>
+                            <option value="" selected disabled>Select</option>
+                            <option value="Markham">Markham</option>
+                            <option value="Toronto">Toronto</option>
+                            <option value="Ajax">Ajax</option>
+                            <option value="Brampton">Brampton</option>
+                            <option value="Oshawa">Oshawa</option>
+                        </select>
+                        <button type="button" class="btn" id="add-location-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <button type="button" class="btn" id="delete-location-btn">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <input type="date" id="date" name="date" placeholder="Audit Date">
+                    </div>
                 </div>
             </div>
             <div class="audit-form-question">
@@ -87,9 +97,14 @@
                 <label><input type="radio" name="question_5" value="Excellent">Excellent</label>
                 <label><input type="radio" name="question_5" value="N/A">N/A</label>
             </div>
+            <div>
+                <button type="button" class="btn" id="add-new-question-btn"><i class="fa-solid fa-plus"></i> Add New Question</button>
+            </div>
             <div class="audit-form-notes">
-                <label for="notes" style="display: block;">Notes:</label>
-                <textarea id="notes" name="notes" rows="7" cols="50"></textarea>
+                <div id="audit-form-notes-group">
+                    <label for="notes" style="display: block;">Notes:</label>
+                    <textarea id="notes" name="notes" rows="7" cols="50"></textarea>
+                </div>
             </div>
             <div class="buttons">
                 <button type="submit" class="btn">Submit Audit</button>
@@ -98,8 +113,7 @@
             </div>
         </form>
     </main>
-    <footer class="audit-footer">
-    </footer>
+    <footer class="audit-footer"></footer>
 </body>
 <div class="modal fade" id="add-location-modal" tabindex="-1" aria-labelledby="add-location-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -123,7 +137,8 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="delete-location-modal" tabindex="-1" aria-labelledby="delete-location-title" aria-hidden="true">
+<div class="modal fade" id="delete-location-modal" tabindex="-1" aria-labelledby="delete-location-title"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -148,5 +163,6 @@
 </div>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
-<script type="module" src="audit.js"></script>
+<script type="module" src="app/audit.js"></script>
+
 </html>

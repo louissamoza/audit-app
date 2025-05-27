@@ -13,7 +13,8 @@ const elements = {
     deleteLocationSelect: document.getElementById('delete-location-select'),
     generateReportBtn: document.getElementById('generate-report-btn'),
     addLocationText: document.getElementById('add-location-text'),
-    questions: document.querySelectorAll('.audit-form-question p')
+    questions: document.querySelectorAll('.audit-form-question p'),
+    addNewQuestionBtn: document.getElementById('add-new-question-btn')
 };
 
 elements.addLocationBtn.addEventListener('click', addLocation);
@@ -22,6 +23,7 @@ elements.deleteLocationBtn.addEventListener('click', deleteLocation);
 elements.deleteLocationBtnConfirm.addEventListener('click', deleteLocationConfirm);
 elements.auditForm.addEventListener('submit', submitAuditForm);
 elements.generateReportBtn.addEventListener('click', generateReport);
+elements.addNewQuestionBtn.addEventListener('click', );
 
 function submitAuditForm(event) {
     event.preventDefault();
@@ -35,6 +37,8 @@ function submitAuditForm(event) {
         answers[key] = value;
     })
 
+    console.log(answers);
+
     // Push the answers object to the data array
     auditData.push(answers);
 }
@@ -42,7 +46,7 @@ function submitAuditForm(event) {
 function generateReport() {
     // Set up the worksheet and workbook
     const workbook = XLSX.utils.book_new();
-    const worksheet = XLSX.utils.json_to_sheet(data);
+    const worksheet = XLSX.utils.json_to_sheet(auditData);
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Audit Data');
 
     // Add headers to the worksheet
@@ -51,10 +55,10 @@ function generateReport() {
 
     // Adjust column widths
     const columnWidths = {
-        name: data.reduce((w, r) => Math.max(w, r.name.length), 10),
-        location: data.reduce((w, r) => Math.max(w, r.location.length), 10),
+        name: auditData.reduce((w, r) => Math.max(w, r.name.length), 10),
+        location: auditData.reduce((w, r) => Math.max(w, r.location.length), 10),
         questions: headers.map(h => ({ wch: h.length })),
-        notes: data.reduce((w, r) => Math.max(w, r.notes.length), 10)
+        notes: auditData.reduce((w, r) => Math.max(w, r.notes.length), 10)
     };
     worksheet["!cols"] = [
         { wch: columnWidths.name },
@@ -99,13 +103,12 @@ function getLocations() {
 }
 
 function deleteLocation() {
-    // Create new modal
     const modal = new bootstrap.Modal(elements.deleteLocationModal);
 
     // Get all location values
     const locations = getLocations().map(location => location.value);
 
-    // Clear the select element
+    // Reset the select element
     elements.deleteLocationSelect.replaceChildren();
 
     // Add locations to the select element
