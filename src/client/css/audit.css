@@ -24,6 +24,10 @@ p {
     .audit-form-question {
         margin-bottom: 2rem;
         align-self: flex-start;
+        min-width: 300px;
+        input {
+            margin-right: 0.5rem;
+        }
     }
     .buttons {
         display: flex;
@@ -99,13 +103,11 @@ p {
     align-items: center;
     width: 100%;
     margin: 2rem 0;
-    border-top: 2px groove #ffffff;
-    padding: 2rem 0 0;
     #audit-form-notes-group {
         display: flex;
         flex-direction: column;
         textarea {
-            max-width: 378px;
+            width: 100%;
             resize: none;
         }
     }
@@ -137,6 +139,7 @@ p {
     }
     .modal-body {
         input {
+            height: 26px;
             width: 100%;
         }
         select {
